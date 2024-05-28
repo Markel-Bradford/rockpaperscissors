@@ -22,6 +22,7 @@ let cpuScore = document.getElementById('cpuScore')
 let ties = 0;
 let tieCount = document.getElementById('tieCount')
 let gameStatus = document.getElementById('gameStatus')
+let resetBtn = document.getElementById('resetBtn')
 
 function getComputerChoice() {
   // Create an array that lists all choices for the game
@@ -137,3 +138,26 @@ function winCondtion() {
 getHumanChoice()
 getComputerChoice()
 
+function resetGame() {
+    humanScore = 0
+    computerScore = 0
+    ties = 0
+    turnsPlayed = 0
+  
+    playerScore.innerText = "Player score: " + humanScore;
+    cpuScore.innerText = "Computer score: " + computerScore;
+    tieCount.innerText = "Number of ties: " + ties;
+    turnsCompleted.innerText = "Turns played: " + turnsPlayed
+    winnerMsg.innerText = " "
+    gameStatus.innerText = " "
+    playerMove.innerText = " "
+    computerMove.innerText = " "
+    choiceImg.src = " "
+    cpuImg.src = " "
+
+    rockBtn.disabled = false
+    paperBtn.disabled = false
+    scissorsBtn.disabled = false
+}
+
+resetBtn.onclick = resetGame

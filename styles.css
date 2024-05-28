@@ -100,6 +100,15 @@ header {
     transition: .5s;
 }
 
-#rockBtn, #paperBtn, #scissorsBtn {
+#rockBtn, #paperBtn, #scissorsBtn, #reset {
     font-family: "Audiowide";
 }
+
+.restart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+
