@@ -100,7 +100,7 @@ header {
     transition: .5s;
 }
 
-#rockBtn, #paperBtn, #scissorsBtn, #reset {
+#rockBtn, #paperBtn, #scissorsBtn, #resetBtn {
     font-family: "Audiowide";
 }
 
