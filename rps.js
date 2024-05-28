@@ -11,8 +11,12 @@ let scissorsBtn = document.getElementById('scissorsBtn')
 let numTurns = 5;
 let turnsPlayed = 0;
 let humanScore = 0;
+let winnerMsg = document.getElementById('winnerMsg')
+let playerScore = document.getElementById('playerScore')
 let computerScore = 0;
+let cpuScore = document.getElementById('cpuScore')
 let ties = 0;
+let tieCount = document.getElementById('tieCount')
 
 function getComputerChoice() {
   // Create an array that lists all choices for the game
@@ -30,54 +34,64 @@ function getHumanChoice() {
   playerSelection = rock
   console.log(playerSelection)
   playerMove.innerText = "Player chose Rock!!"
-  computerMove.innerText = "Computer chose " + getComputerChoice()
+  let computerSelection = getComputerChoice()
+  computerMove.innerText = "Computer chose " + computerSelection
+  console.log(choice)
+  playRound(playerSelection, computerSelection)
   }
   paperBtn.onclick = function() {
   playerSelection = paper
   console.log(playerSelection)
   playerMove.innerText = "Player chose Paper!!"
-  computerMove.innerText = "Computer chose " + getComputerChoice()
+  let computerSelection = getComputerChoice()
+  computerMove.innerText = "Computer chose " + computerSelection
+  console.log(choice)
+  playRound(playerSelection, computerSelection)
   }
   scissorsBtn.onclick = function() {
   playerSelection = scissors
   console.log(playerSelection)
   playerMove.innerText = "Player chose Scissors!!"
-  computerMove.innerText = "Computer chose " + getComputerChoice()
+  let computerSelection = getComputerChoice()
+  computerMove.innerText = "Computer chose " + computerSelection
+  playRound(playerSelection, computerSelection)
   }
 }
+
 
 function playRound(humanChoice, computerChoice) { 
   // Create conditional statements for win conditions
-  if (humanChoice === "rock" && computerChoice === "scissors") {
+  if (humanChoice === "rock" && computerChoice === "Scissors!!") {
       // Use ++ to increment score
     ++humanScore;
     // Log the condition message in the console
-    console.log("Human wins! Rock beats scissors");
-  } else if (humanChoice === "paper" && computerChoice === "rock") {
+    winnerMsg.innerText = "Human wins! Rock beats scissors";
+  } else if (humanChoice === "paper" && computerChoice === "Rock!!") {
     ++humanScore;
-    console.log("Human wins! Paper beats rock");
-  } else if (humanChoice === "scissors" && computerChoice === "paper") {
+    winnerMsg.innerText = "Human wins! Paper beats rock";
+  } else if (humanChoice === "scissors" && computerChoice === "Paper!!") {
     ++humanScore;
-    console.log("Human wins! Scissors beat paper");
-  } else if (computerChoice === "paper" && humanChoice === "rock") {
+    winnerMsg.innerText = "Human wins! Scissors beat paper";
+  } else if (computerChoice === "Paper!!" && humanChoice === "rock") {
     ++computerScore;
-    console.log("Computer wins! Paper beats rock");
-  } else if (computerChoice === "scissors" && humanChoice === "paper") {
+    winnerMsg.innerText = "Computer wins! Paper beats rock";
+  } else if (computerChoice === "Scissors!!" && humanChoice === "paper") {
     ++computerScore;
-    console.log("Computer wins! Scissors beats paper");
-  } else if (computerChoice === "rock" && humanChoice === "scissors") {
+    winnerMsg.innerText = "Computer wins! Scissors beats paper";
+  } else if (computerChoice === "Rock!!" && humanChoice === "scissors") {
     ++computerScore;
-    console.log("Computer wins! Rock beats scissors");
+    winnerMsg.innerText = "Computer wins! Rock beats scissors";
   } else {
     ++ties;
-    console.log("Draw! Play again");
+    winnerMsg.innerText = "Draw!"
   }
 
   // Log the updated score after each turn
-  console.log("Player score: " + humanScore);
-  console.log("Computer score: " + computerScore);
-  console.log("Number of ties: " + ties);
+  playerScore.innerText = "Player score: " + humanScore;
+  cpuScore.innerText = "Computer score: " + computerScore;
+  tieCount.innerText = "Number of ties: " + ties;
   
 }
 
-console.log(playRound())
+getHumanChoice()
+getComputerChoice()
