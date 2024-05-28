@@ -1,6 +1,15 @@
 body {
     background: lightblue;
     margin: 0;
+    font-family: "Audiowide";
+    box-sizing: border-box;
+    padding: 0 50px;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .game {
@@ -30,6 +39,8 @@ body {
 #choiceImg, #cpuImg {
     padding: 20px;
     width: 35%; /* Adjust width as needed */
+    border: 2px solid #FFD700;
+    border-radius: 18px;
 }
 
 .scoreContainer {
@@ -66,10 +77,29 @@ body {
     border: burlywood solid 2px;
 }
 
+#rockBtn:hover {
+    background: burlywood;
+    transition: .5s;
+}
+
 #paperBtn {
     border: 2px solid #fff;
 }
 
+#paperBtn:hover {
+    background: #fff;
+    transition: .5s;
+}
+
 #scissorsBtn {
     border: 2px solid silver;
+}
+
+#scissorsBtn:hover {
+    background: silver;
+    transition: .5s;
+}
+
+#rockBtn, #paperBtn, #scissorsBtn {
+    font-family: "Audiowide";
 }

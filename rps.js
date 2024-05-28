@@ -13,6 +13,7 @@ let choiceImg = document.getElementById('choiceImg')
 let cpuImg = document.getElementById('cpuImg')
 let numTurns = 5;
 let turnsPlayed = 0;
+let turnsCompleted = document.getElementById('turnsCompleted')
 let humanScore = 0;
 let winnerMsg = document.getElementById('winnerMsg')
 let playerScore = document.getElementById('playerScore')
@@ -20,6 +21,7 @@ let computerScore = 0;
 let cpuScore = document.getElementById('cpuScore')
 let ties = 0;
 let tieCount = document.getElementById('tieCount')
+let gameStatus = document.getElementById('gameStatus')
 
 function getComputerChoice() {
   // Create an array that lists all choices for the game
@@ -61,7 +63,7 @@ function getHumanChoice() {
   computerSelection = computerSelectionObj.choice
   computerMove.innerText = computerSelectionObj.choice
   cpuImg.src = computerSelectionObj.img
-  console.log(choice)
+  console.log(choiceObj)
   playRound(playerSelection, computerSelection)
   }
   // Create a funtion to pass an event to the scissors btn
@@ -94,13 +96,13 @@ function playRound(humanChoice, computerChoice) {
     winnerMsg.innerText = "Human wins! Scissors beat paper";
   } else if (computerChoice === "Paper!!" && humanChoice === "rock") {
     ++computerScore;
-    winnerMsg.innerText = "Computer wins! Paper beats rock";
+    winnerMsg.innerText = "CPU wins! Paper beats rock";
   } else if (computerChoice === "Scissors!!" && humanChoice === "paper") {
     ++computerScore;
-    winnerMsg.innerText = "Computer wins! Scissors beats paper";
+    winnerMsg.innerText = "CPU wins! Scissors beats paper";
   } else if (computerChoice === "Rock!!" && humanChoice === "scissors") {
     ++computerScore;
-    winnerMsg.innerText = "Computer wins! Rock beats scissors";
+    winnerMsg.innerText = "CPU wins! Rock beats scissors";
   } else {
     ++ties;
     winnerMsg.innerText = "Draw!"
@@ -110,9 +112,28 @@ function playRound(humanChoice, computerChoice) {
   playerScore.innerText = "Player score: " + humanScore;
   cpuScore.innerText = "Computer score: " + computerScore;
   tieCount.innerText = "Number of ties: " + ties;
-  
+  turnsCompleted.innerText = "Turns played: " + ++turnsPlayed
+
+  // Call the win condition within playRound to activate when condition is met
+  winCondtion()
 }
 
-// Call the functions to activate the program
+function winCondtion() {
+    if (humanScore === 5) {
+      gameStatus.innerText = "Game over! Player wins!"
+      rockBtn.disabled = true
+      paperBtn.disabled = true
+      scissorsBtn.disabled = true
+    } else if (computerScore === 5) {
+      gameStatus.innerText = "Game over! CPU wins!"
+      rockBtn.disabled = true
+      paperBtn.disabled = true
+      scissorsBtn.disabled = true
+    }
+  }
+
+// Call the functions at the end to activate the program
+// This prevent execution before playRound executes
 getHumanChoice()
 getComputerChoice()
+
