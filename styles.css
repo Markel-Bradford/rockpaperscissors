@@ -12,12 +12,16 @@ header {
     align-items: center;
 }
 
+.game-instruction {
+    text-align: center;
+}
+
 .game {
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1300px;
-    margin: 100px auto;
+    margin: 50px auto;
 }
 
 .playerInfo {
