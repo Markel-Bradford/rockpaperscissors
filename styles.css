@@ -1,0 +1,75 @@
+body {
+    background: lightblue;
+    margin: 0;
+}
+
+.game {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px;
+    margin: 100px auto;
+}
+
+.playerInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+}
+
+.playerInfo.player {
+    align-items: flex-start;
+}
+
+.playerInfo.cpu {
+    align-items: flex-end;
+}
+
+#choiceImg, #cpuImg {
+    padding: 20px;
+    width: 35%; /* Adjust width as needed */
+}
+
+.scoreContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+}
+
+.score {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 20px auto;
+}
+
+.choiceBtn {
+    font-size: 24px;
+    padding: 10px 20px;
+    background: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#rockBtn {
+    border: burlywood solid 2px;
+}
+
+#paperBtn {
+    border: 2px solid #fff;
+}
+
+#scissorsBtn {
+    border: 2px solid silver;
+}
