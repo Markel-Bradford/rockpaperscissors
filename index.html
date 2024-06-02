@@ -7,22 +7,25 @@
     <link
     rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Audiowide">
+    <script src="https://kit.fontawesome.com/d78e5b6d9a.js" crossorigin="anonymous"></script>
     <title>Rock, Paper, Scissors!</title>
   </head>
   <body>
     <header>
         <h1>ROSHAMBO!!!!</h1>
     </header>   
-    <h1 class="game-instruction">The first to score 5 points wins!!</h1>
+    <h1 class="game-instruction">The first to score 5 points wins!!</h1>        
+    <h2 id="winnerMsg"></h2>
     <div class="game" id="game">
       <div class="playerInfo player">
         <h1>Player:</h1>
+
         <h1 id="playerMove"></h1>
         <img id="choiceImg" />
       </div>
       <div class="scoreContainer">
         <div class="score">
-          <h2 id="winnerMsg"></h2>
+          
           <div class="counts">
           <p id="turnsCompleted"></p>
           <p id="playerScore"></p>
@@ -39,9 +42,9 @@
       </div>
     </div>
     <div class="btnContainer">
-      <button class="choiceBtn" id="rockBtn">Rock</button>
-      <button class="choiceBtn" id="paperBtn">Paper</button>
-      <button class="choiceBtn" id="scissorsBtn">Scissors</button>
+      <button class="choiceBtn" id="rockBtn"><i class="fa-solid fa-hand-back-fist"></i></button>
+      <button class="choiceBtn" id="paperBtn"><i class="fa-solid fa-hand"></i></button>
+      <button class="choiceBtn" id="scissorsBtn"><i class="fa-solid fa-hand-scissors"></i></button>
     </div>
     <div class="restart">
         <button id="resetBtn" class="choiceBtn" type="reset">Reset</button>

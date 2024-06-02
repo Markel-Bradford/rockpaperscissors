@@ -22,6 +22,7 @@ header {
     align-items: center;
     max-width: 1300px;
     margin: 50px auto;
+    gap: 25px;
 }
 
 .playerInfo {
@@ -42,7 +43,7 @@ header {
 
 #choiceImg, #cpuImg {
     padding: 20px;
-    width: 35%; /* Adjust width as needed */
+    width: 35%;
     border: 2px solid #FFD700;
     border-radius: 18px;
 }
@@ -65,13 +66,13 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 30px;
     margin: 20px auto;
 }
 
 .choiceBtn {
     font-size: 24px;
-    padding: 10px 20px;
+    padding: 10px 30px;
     background: transparent;
     border-radius: 5px;
     cursor: pointer;
@@ -79,33 +80,44 @@ header {
 
 #rockBtn {
     border: burlywood solid 2px;
+    color: burlywood;
 }
 
 #rockBtn:hover {
     background: burlywood;
     transition: .5s;
+    color: #000;
 }
 
 #paperBtn {
     border: 2px solid #fff;
+    color: #fff;
 }
 
 #paperBtn:hover {
     background: #fff;
     transition: .5s;
+    color: #000;
 }
 
 #scissorsBtn {
     border: 2px solid silver;
+    color: silver;
 }
 
 #scissorsBtn:hover {
     background: silver;
     transition: .5s;
+    color: #000;
+}
+
+#rockBtn, #paperBtn, #scissorsBtn{
+    font-size: 50px;
 }
 
 #rockBtn, #paperBtn, #scissorsBtn, #resetBtn {
     font-family: "Audiowide";
+    
 }
 
 .restart {
@@ -116,3 +128,44 @@ header {
 }
 
 
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    .choiceBtn {
+        font-size: 16px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    #playerMove, #computerMove {
+        font-size: 20px;
+    }
+
+    .scoreContainer {
+        flex-direction: column;
+    }
+
+    .counts {
+        font-size: 10px;
+    }
+
+    .game-instruction {
+        margin-top: 100px;
+    }
+
+    #winnerMsg {
+        text-align: center;
+    }
+
+    .btnContainer {
+        gap: 20px;
+    }
+
+    #rockBtn, #paperBtn, #scissorsBtn {
+        font-size: 30px;
+    }
+}
