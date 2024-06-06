@@ -16,6 +16,10 @@ header {
     text-align: center;
 }
 
+#winnerMsg {
+    text-align: center;
+}
+
 .game {
     display: flex;
     justify-content: space-between;
@@ -125,6 +129,13 @@ header {
     justify-content: center;
     align-items: center;
     margin-top: 50px;
+}
+
+.rps-footer {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
 }
 
 
